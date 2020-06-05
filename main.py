@@ -20,7 +20,7 @@ async def on_message(message):
         await ch.send('盤面を送信してください')
         msg = await client.wait_for('message', check=lambda m: m.author.id == message.author.id and m.channel.id == message.channel.id, timeout=60)
         banmen = list(map(lambda x: list(map(int, x.split())), msg.content.split('\n')))
-    game = Game2048(client, None, banmen)
+    game = Game2048(banmen)
     before = await send_image(ch, game)
     before2 = None
     while game.has_0():

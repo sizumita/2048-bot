@@ -173,9 +173,7 @@ def generate_mass(mass):
 
 
 class Game2048:
-    def __init__(self, bot, ctx, mass):
-        self.bot = bot
-        self.ctx = ctx
+    def __init__(self, mass):
         self.mass = mass or default_mass
 
     def up(self):
